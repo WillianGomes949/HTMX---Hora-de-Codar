@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+    <title>Curso HTMX</title>
+</head>
+<body>
+    <h1>Curso de HTMX</h1>
+
+    <!-- hx-get => Trazer os dados do backend - GET -->
+
+    <button hx-get="/carregar-conteudo" hx-target="#conteudo-get">Carregar conteúdo</button>
+    <p hx-get="/carregar-conteudo" hx-trigger="click[ctrlKey]">Aperte a tecla CTRL</p>
+    <div id="conteudo-get">
+    </div>
+    <form hx-post="/enviar-formulario" hx-trigger="submit" hx-target="#resposta">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome">
+        <button>Enviar</button>
+        <div id="resposta">
+            
+        </div>
+    </form>
+
+</body>
+</html>
